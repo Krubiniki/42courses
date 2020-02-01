@@ -16,9 +16,9 @@
 
 NAME = libft.a
 
-SCRIPT = ft_memset.c ft_isdigit.c
+SCRIPT = ft_memset.c ft_bzero.c ft_isdigit.c ft_memcpy.c ft_memmove.c
 
-SCRIPTOBJ = ft_memset.o ft_isdigit.o
+SCRIPTOBJ = ft_memset.o ft_bzero.o ft_isdigit.o ft_memcpy.o ft_memmove.o
 
 FLAGS = -Wall -Wextra -Werror
 
