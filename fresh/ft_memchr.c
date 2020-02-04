@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 19:15:29 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/02/03 20:36:13 by mkrubini         ###   ########.fr       */
+/*   Created: 2020/02/03 20:24:41 by mkrubini          #+#    #+#             */
+/*   Updated: 2020/02/03 21:03:29 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int					i;
-	unsigned char		*pd;
-	const unsigned char	*ps;
+	const unsigned char	*cps;
 
-	pd = dst;
-	ps = src;
-	i = len;
-	if (pd > ps)
+	cps = s;
+	i = 0;
+	while (cps[i] != '\0' && n > 0)
 	{
-		while (i > 0)
+		if (cps[i] == c)
 		{
-			pd[i - 1] = ps[i - 1];
-			i--;
+			return ((void *)cps);
 		}
+		i++;
+		n--;
 	}
-	while (len--)
-	{
-		*pd++ = *ps++;
-	}
-	return (dst);
+	return (NULL);
 }

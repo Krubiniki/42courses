@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 19:15:29 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/02/03 20:36:13 by mkrubini         ###   ########.fr       */
+/*   Created: 2020/02/03 21:28:08 by mkrubini          #+#    #+#             */
+/*   Updated: 2020/02/03 21:50:36 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int					i;
-	unsigned char		*pd;
-	const unsigned char	*ps;
+	int i;
 
-	pd = dst;
-	ps = src;
-	i = len;
-	if (pd > ps)
+	i = 0;
+	while (dstsize > 0)
 	{
-		while (i > 0)
-		{
-			pd[i - 1] = ps[i - 1];
-			i--;
-		}
+		dst[i] = src[i];
+		i++;
+		dstsize--;
 	}
-	while (len--)
-	{
-		*pd++ = *ps++;
-	}
-	return (dst);
+	return (ft_strlen(src));
 }
