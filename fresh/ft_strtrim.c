@@ -17,19 +17,41 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ps1;
 	char	*pset;
-	int		i;
-	int		j;
+	char	*final;
+	int		fin;
+	int		count;
+	int		ini;
 
 	ps1 = (char *)s1;
-	set = (char *)set;
-	i = 0;
-	while(ps1[i] != '\0')
+	pset = (char *)set;
+	fin = 0;
+	count = 0;
+	ini = 0;
+	while (ps1[fin] != '\0')
+		fin++;
+	while (ps1[ini] == pset[count])
 	{
-		j = 0;
-		if(ps1[i] == pset[j])
-		{
-			j++;
-		}
-		i++;
+		count++;
+		if(pset[count] == '\0')
+			count = 0;
+		ini++;
 	}
+	while (ps1[fin] == pset[count])
+	{
+		count++;
+		if (pset[count] == '\0')
+			count = 0;
+		fin--;
+	}
+	count = 0;
+	if (!(final = malloc(sizeof(char)*(fin - ini))))
+		return (NULL);
+	while (fin > ini)
+	{
+		ps1[ini] = final[count];
+		ini++;
+		count++;
+	}
+	final[count] = '\0';
+	return(final);
 }
