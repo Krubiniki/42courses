@@ -1,5 +1,5 @@
 //header 42
-
+/*
 #include "libft.h"
 #include <stdlib.h>
 
@@ -28,4 +28,4 @@ char	**ft_split(char const *s, char c)
 	if(!(split = malloc(sizeof(char)*size)))
 		return (NULL);
 	return (split);
-}
+}*/

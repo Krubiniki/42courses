@@ -12,7 +12,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	pd = dst;
 	ps = src;
 	if (n == 0)
-		return (NULL);
+		return (dst);
 	while (ps[i] != c)
 		i++;
 	if (i < n)
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 			*pd++ = *ps++;
 			n--;	
 		}
-		return (dst);
+		return (pd);
 	}
 	return (NULL);
 }

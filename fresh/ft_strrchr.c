@@ -6,7 +6,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char *ps;
 	
-	if (s[0] == '\0')
+	if (s[0] == '\0' || s[0] == c)
 		return ((char *)s);
 	while (*s++)
 	{
