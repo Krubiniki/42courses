@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int					i;
+	unsigned int				i;
 	unsigned char		*pd;
 	const unsigned char	*ps;
 
@@ -29,9 +29,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i--;
 		}
 	}
-	while (len--)
+	else
 	{
-		*pd++ = *ps++;
+		while (len > 0)
+		{
+			*pd++ = *ps++;
+			len--;
+		}
 	}
 	return (dst);
 }
