@@ -13,45 +13,73 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	countFin(char const *s1, char const *set)
 {
-	char	*ps1;
-	char	*pset;
-	char	*final;
-	int		fin;
-	int		count;
-	int		ini;
-
-	ps1 = (char *)s1;
-	pset = (char *)set;
+	unsigned int fin;
+	unsigned int count;
+	
 	fin = 0;
 	count = 0;
-	ini = 0;
-	while (ps1[fin] != '\0')
+
+	while (s1[fin] != '\0')
 		fin++;
-	while (ps1[ini] == pset[count])
+
+	while (s1[fin] == set[count])
 	{
 		count++;
-		if(pset[count] == '\0')
+		if (set[count] == '\0')
+		{
 			count = 0;
-		ini++;
+			fin--;
+		}
 	}
-	while (ps1[fin] == pset[count])
-	{
-		count++;
-		if (pset[count] == '\0')
-			count = 0;
-		fin--;
-	}
+	return (fin);
+}
+
+
+int	countIni(char const *s1, char const *set)
+{
+	unsigned int ini;
+	unsigned int count;
+
+	ini = 0;
 	count = 0;
-	if (!(final = malloc(sizeof(char)*(fin - ini))))
-		return (NULL);
-	while (fin > ini)
+
+	while (s1[ini] == set[count])
 	{
-		ps1[ini] = final[count];
+		count++;
+		if (set[count] == '\0')
+		{
+			count = 0;
+			ini++;
+		}
+	}
+	return (ini);
+}
+
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trimmed;
+	unsigned int	fin;
+	unsigned int	ini;
+	unsigned int	count;
+	
+	fin = countFin(s1,set);
+	ini = countIni(s1,set);
+	count = 0;
+
+	if (!(trimmed = malloc(sizeof(char)*((fin - ini) + 1))))
+		return (NULL);
+
+	while (ini < fin)
+	{
+		trimmed[count] = s1[ini];
 		ini++;
 		count++;
-	}
-	final[count] = '\0';
-	return(final);
+	}	
+	
+	trimmed[ini + 1] = '\0';
+
+	return(trimmed);
 }
