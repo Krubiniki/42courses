@@ -1,4 +1,14 @@
-//header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/04 19:55:43 by mkrubini          #+#    #+#             */
+/*   Updated: 2020/03/04 20:18:28 by mkrubini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -17,9 +27,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		j = 0;
 		k = i;
-		while (haystack[i] == needle [j] && len > 0)
+		while (haystack[i] == needle[j] && len > 0)
 		{
-			i++;	
+			i++;
 			j++;
 			len--;
 			if (needle[j] == '\0')

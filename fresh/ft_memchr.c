@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 20:24:41 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/02/03 21:03:29 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/04 19:50:50 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int					i;
+	int			i;
 	const char	*cps;
 
 	cps = s;
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (cps[i] == c)
 		{
-			return ((void *)(cps+i));
+			return ((void *)(cps + i));
 		}
 		i++;
 		n--;

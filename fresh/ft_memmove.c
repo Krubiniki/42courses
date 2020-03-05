@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 19:15:29 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/02/03 20:36:13 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/04 19:53:00 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned int				i;
+	unsigned int		i;
 	unsigned char		*pd;
 	const unsigned char	*ps;
 
