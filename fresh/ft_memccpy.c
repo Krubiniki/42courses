@@ -27,9 +27,10 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		i++;
 	if (i < n)
 	{
-		while (n > 0)
+		while ((i + 1) > 0 && n > 0)
 		{
 			*pd++ = *ps++;
+			i--;
 			n--;
 		}
 		return (pd);
