@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 19:59:14 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/04 20:00:49 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/07 09:45:40 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	if (n == 0)
 		i--;
-	if (s1[i] > s2[i] || s2[i] > s1[i])                                                            return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (s1[i] > s2[i] || s2[i] > s1[i])
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
