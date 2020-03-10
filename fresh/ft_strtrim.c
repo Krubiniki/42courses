@@ -16,20 +16,20 @@
 int		count_fin(char const *s1, char const *set)
 {
 	unsigned int fin;
-	unsigned int count;
+	int count;
 
 	fin = 0;
 	count = 0;
 	while (s1[fin] != '\0')
 		fin++;
-	while (s1[fin] == set[count])
+	while (set[count] != '\0')
 	{
-		count++;
-		if (set[count] == '\0')
+		if (set[count] == s1[fin - 1])
 		{
-			count = 0;
 			fin--;
+			count = -1;
 		}
+		count++;
 	}
 	return (fin);
 }
@@ -37,18 +37,18 @@ int		count_fin(char const *s1, char const *set)
 int		count_ini(char const *s1, char const *set)
 {
 	unsigned int ini;
-	unsigned int count;
+	int count;
 
 	ini = 0;
 	count = 0;
-	while (s1[ini] == set[count])
+	while (set[count] != '\0')
 	{
-		count++;
-		if (set[count] == '\0')
+		if (set[count] == s1[ini])
 		{
-			count = 0;
+			count = -1;
 			ini++;
 		}
+		count++;
 	}
 	return (ini);
 }
@@ -59,18 +59,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	fin;
 	unsigned int	ini;
 	unsigned int	count;
-
-	fin = count_fin(s1, set);
+	
+	if (s1 == NULL)
+		return (NULL);
 	ini = count_ini(s1, set);
+	if (ini == ft_strlen(s1))
+	{
+		trimmed = malloc(sizeof(char));
+		trimmed[0] = '\0';
+		return (trimmed);
+	}
+	fin = count_fin(s1, set);
 	count = 0;
 	if (!(trimmed = malloc(sizeof(char) * ((fin - ini) + 1))))
 		return (NULL);
-	while (ini < fin)
+	while (count < (fin - ini))
 	{
-		trimmed[count] = s1[ini];
-		ini++;
+		trimmed[count] = s1[ini + count];
 		count++;
 	}
-	trimmed[ini + 1] = '\0';
+	trimmed[count] = '\0';
 	return (trimmed);
 }
