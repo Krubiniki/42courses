@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 19:41:33 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/07 10:00:21 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 14:38:29 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char *ptr;
+	void *ptr;
 
 	if (count == 0 || size == 0)
 	{
 		count = 1;
 		size = 1;
 	}
-	if (!(ptr = (char *)malloc((sizeof(char) * count * size) + 1)))
+	if (!(ptr = (char *)malloc((sizeof(char) * count * size))))
 		return (NULL);
 	ft_bzero(ptr, count * size);
-	return ((void *)ptr);
+	return (ptr);
 }

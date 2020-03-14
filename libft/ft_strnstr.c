@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 19:55:43 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/04 20:18:28 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:13:35 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	int k;
 
 	i = 0;
-	if (len <= 0)
+	if (ft_strlen(haystack) < ft_strlen(needle))
 		return (NULL);
 	if (needle[i] == '\0')
 		return ((char *)haystack);

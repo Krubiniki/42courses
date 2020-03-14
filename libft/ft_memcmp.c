@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 21:08:41 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/07 09:46:26 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:50:41 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (n > 0)
 	{
 		if (ps1[i] != ps2[i])
-		{
-			if ((ps1[i] - ps2[i]) > 0)
-				return (1);
-			else
-				return (-1);
-		}
+			return ((ps1[i] - ps2[i]));
 		i++;
 		n--;
 	}

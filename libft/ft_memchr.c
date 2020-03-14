@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 20:24:41 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/04 19:50:50 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 15:57:44 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 		n--;
 	}
+	if (cps[i] == '\0' && c == '\0')
+		return ((void *)(cps + i));
 	return (NULL);
 }
