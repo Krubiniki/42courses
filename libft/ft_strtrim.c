@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 19:48:02 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/04 20:13:19 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 14:01:59 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int		count_fin(char const *s1, char const *set)
 {
-	unsigned int fin;
-	int count;
+	unsigned int	fin;
+	int				count;
 
 	fin = 0;
 	count = 0;
@@ -36,8 +36,8 @@ int		count_fin(char const *s1, char const *set)
 
 int		count_ini(char const *s1, char const *set)
 {
-	unsigned int ini;
-	int count;
+	unsigned int	ini;
+	int				count;
 
 	ini = 0;
 	count = 0;
@@ -59,7 +59,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	fin;
 	unsigned int	ini;
 	unsigned int	count;
-	
+
 	if (s1 == NULL)
 		return (NULL);
 	ini = count_ini(s1, set);

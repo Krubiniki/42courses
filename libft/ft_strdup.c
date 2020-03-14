@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 19:53:21 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/07 10:12:56 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 10:44:16 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	char			*p;
-	int	i;
+	char	*p;
+	int		i;
 
 	i = 0;
 	if (s == NULL)

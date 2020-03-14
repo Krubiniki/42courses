@@ -6,14 +6,14 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 21:45:02 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/03/10 22:50:44 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/03/14 10:43:52 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	checkpossize(int ncopy)	//size 2 = (1 pro byte '\0' ) + (1 pro número final)
+int		checkpossize(int ncopy)
 {
 	int size;
 
@@ -25,10 +25,10 @@ int	checkpossize(int ncopy)	//size 2 = (1 pro byte '\0' ) + (1 pro número final
 		size++;
 		ncopy = ncopy / 10;
 	}
-	return (size);	
+	return (size);
 }
 
-int	checknegsize(int ncopy)	//size 3 = (1 pro byte '\0' ) + (1 pro '-') + (1 pro número final)
+int		checknegsize(int ncopy)
 {
 	int size;
 
@@ -75,15 +75,15 @@ char	*putposnbr(char *nbr, int ncopy, int size)
 		count--;
 	}
 	if (ncopy < 10)
-		nbr[count] = ncopy + '0';		
+		nbr[count] = ncopy + '0';
 	return (nbr);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*nbr;
-	int	size;
-	int	ncopy;
+	int		size;
+	int		ncopy;
 
 	size = 0;
 	ncopy = n;
