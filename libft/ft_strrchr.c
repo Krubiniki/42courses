@@ -16,12 +16,19 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char *ps;
 
+	ps = s;
+	if (s == NULL)
+		return (NULL);
 	if (s[0] == '\0' || s[0] == c)
 		return ((char *)s);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
 	while (*s++)
 	{
 		if (*s == c)
 			ps = s;
 	}
+	if (*ps != c)
+		return (NULL);
 	return ((char *)ps);
 }

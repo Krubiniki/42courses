@@ -16,14 +16,15 @@
 char	*ft_strdup(const char *s)
 {
 	char			*p;
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (s[i] == '\0')
+	if (s == NULL)
 		return (NULL);
 	i = ft_strlen(s);
-	if (!(p = (char *)malloc((sizeof(char) * i))))
+	if (!(p = (char *)malloc((sizeof(char) * i + 1))))
 		return (NULL);
+	ft_memcpy(p, s, i);
 	p[i] = '\0';
-	return (ft_memcpy(p, s, i));
+	return (p);
 }
