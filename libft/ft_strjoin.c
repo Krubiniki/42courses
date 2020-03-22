@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len = 0;
 	i = 0;
 	len = checklen(s1, s2, i, len);
-	if (!(join = ft_calloc(sizeof(char), (len + 1))))
+	if (!(join = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')

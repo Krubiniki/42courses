@@ -11,24 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int			i;
+	unsigned long		i;
 	const char	*cps;
 
 	cps = s;
-	i = 0;
-	while (cps[i] != '\0' && n > 0)
+	i = -1;
+	while (++i < n)
 	{
 		if (cps[i] == c)
-		{
 			return ((void *)(cps + i));
-		}
-		i++;
-		n--;
 	}
-	if (cps[i] == '\0' && c == '\0')
-		return ((void *)(cps + i));
 	return (NULL);
 }
+
