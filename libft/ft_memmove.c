@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			pd[i] = ps[i];
 		return (pd);
 	}
-	i = -1;	
+	i = -1;
 	while (++i < len)
 		pd[i] = ps[i];
 	return (dst);
