@@ -37,7 +37,7 @@ clean:
 	rm -f $(SCRIPTOBJ) $(SCRIPTBONUSOBJ)
 
 fclean:
-	rm -f $(SCRIPTOBJ) $(NAME)
+	rm -f $(SCRIPTOBJ) $(SCRIPTBONUSOBJ) $(NAME)
 
 re:	fclean all
 
