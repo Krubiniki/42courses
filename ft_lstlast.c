@@ -6,7 +6,7 @@
 /*   By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/28 14:03:10 by mkrubini          #+#    #+#             */
-/*   Updated: 2020/04/29 20:20:35 by mkrubini         ###   ########.fr       */
+/*   Updated: 2020/04/29 20:29:02 by mkrubini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-
 	if (lst != NULL)
 	{
 		while (lst->next != NULL)
