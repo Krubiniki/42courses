@@ -6,7 +6,7 @@
 #    By: mkrubini <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 19:03:55 by mkrubini          #+#    #+#              #
-#    Updated: 2020/03/07 10:29:25 by mkrubini         ###   ########.fr        #
+#    Updated: 2020/04/29 19:38:21 by mkrubini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SCRIPTBONUSOBJ = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lsta
 
 FLAGS = -Wall -Wextra -Werror
 
-all: $(NAME) 
+all:$(NAME)
 
 $(NAME):	$(SCRIPT) libft.h
 	gcc $(FLAGS) -I./ -c $(SCRIPT)
